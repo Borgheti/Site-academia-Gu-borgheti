@@ -209,27 +209,5 @@ function enviarFeedback() {
     if (!alunos[index].feedbacks) alunos[index].feedbacks = [];
     alunos[index].feedbacks.push({ nota, comentario, data: new Date().toISOString() });
     localStorage.setItem("alunos", JSON.stringify(alunos));
-    alert("Feedback enviado, obrigado!");
-    document.getElementById("notaFeedback").value = "";
-    document.getElementById("comentarioFeedback").value = "";
-  }
-}
-
-function carregarFeedbacks() {
-  const feedbacksDiv = document.getElementById("feedbacksRecebidos");
-  feedbacksDiv.innerHTML = "";
-  const alunos = JSON.parse(localStorage.getItem("alunos")) || [];
-
-  alunos.forEach(aluno => {
-    if (aluno.feedbacks && aluno.feedbacks.length > 0) {
-      const divAluno = document.createElement("div");
-      divAluno.innerHTML = `<h3>Feedbacks de ${aluno.nome}</h3>`;
-      aluno.feedbacks.forEach(fb => {
-        const divFb = document.createElement("div");
-        divFb.innerHTML = `<strong>Nota:</strong> ${fb.nota} <br> <strong>Comentário:</strong> ${fb.comentario || "(Sem comentário)"} <br><small>${new Date(fb.data).toLocaleString()}</small><hr>`;
-        divAluno.appendChild(divFb);
-      });
-      feedbacksDiv.appendChild(divAluno);
-    }
-  });
+    alert("Feedback enviado, 
 }
