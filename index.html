@@ -7,23 +7,66 @@
   <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#FFD700" />
   <style>
-    body { background-color: #000; color: #fff; font-family: Arial, sans-serif; margin: 0; padding: 0; }
-    header { background-color: #FFD700; color: #000; text-align: center; padding: 20px; }
-    .container { padding: 20px; max-width: 800px; margin: auto; }
-    h2 { color: #FFD700; margin-top: 30px; }
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #FFD700;
+      color: #000;
+      text-align: center;
+      padding: 20px;
+    }
+    .container {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    h2 {
+      color: #FFD700;
+      margin-top: 30px;
+    }
     input, textarea, button {
-      display: block; width: 100%; margin: 10px 0; padding: 10px;
-      font-size: 16px; border: none; border-radius: 5px;
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
     }
-    input, textarea { background-color: #111; color: #fff; }
-    button { background-color: #FFD700; color: #000; font-weight: bold; cursor: pointer; }
+    input, textarea {
+      background-color: #111;
+      color: #fff;
+    }
+    button {
+      background-color: #FFD700;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
     .aluno-card {
-      background: #111; border: 2px solid #FFD700;
-      padding: 15px; margin-top: 10px; border-radius: 8px;
+      background: #111;
+      border: 2px solid #FFD700;
+      padding: 15px;
+      margin-top: 10px;
+      border-radius: 8px;
     }
-    .treino { white-space: pre-wrap; margin-top: 10px; color: #ccc; }
-    #login, #painelProfessor, #painelAluno, #feedbackSection, #listaFeedbacks { display: none; }
-    .logout { text-align: right; margin-bottom: 20px; }
+    .treino {
+      white-space: pre-wrap;
+      margin-top: 10px;
+      color: #ccc;
+    }
+    #login, #painelProfessor, #painelAluno, #feedbackSection, #listaFeedbacks {
+      display: none;
+    }
+    .logout {
+      text-align: right;
+      margin-bottom: 20px;
+    }
   </style>
 </head>
 <body>
@@ -31,22 +74,17 @@
     <h1>Bem Estar Academia</h1>
     <p>Fichas de Treino Personalizadas</p>
   </header>
+
   <div class="container">
+    <!-- LOGIN -->
     <div id="login">
       <h2>Login</h2>
       <input type="text" id="loginNome" placeholder="Seu nome" />
       <input type="password" id="loginSenha" placeholder="Senha" />
       <button onclick="logar()">Entrar</button>
-      <button onclick="mostrarRedefinirSenha()">Esqueci a Senha</button>
-
-      <div id="redefinirSenha" style="display:none; margin-top: 20px;">
-        <h2>Redefinir Senha</h2>
-        <input type="text" id="nomeRedefinir" placeholder="Nome do aluno" />
-        <input type="password" id="novaSenha" placeholder="Nova senha" />
-        <button onclick="redefinirSenha()">Redefinir</button>
-      </div>
     </div>
 
+    <!-- PAINEL PROFESSOR -->
     <div id="painelProfessor">
       <div class="logout"><button onclick="logout()">Sair</button></div>
       <h2>Adicionar Ficha</h2>
@@ -68,6 +106,7 @@
       </div>
     </div>
 
+    <!-- PAINEL ALUNO -->
     <div id="painelAluno">
       <div class="logout"><button onclick="logout()">Sair</button></div>
       <h2>Sua Ficha</h2>
